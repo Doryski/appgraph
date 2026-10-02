@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="__APPGRAPH_LANG__">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>__APPGRAPH_TITLE__</title>
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const read = () => {
+          try {
+            return localStorage.getItem("appgraph-theme");
+          } catch {
+            return null;
+          }
+        };
+        const saved = read();
+        if (saved === "light" || saved === "dark") {
+          root.dataset.theme = saved;
+          return;
+        }
+        root.removeAttribute("data-theme");
+      })();
+    </script>
+    <style id="appgraph-palette">__APPGRAPH_PALETTE__</style>
+  </head>
+  <body>
+    <noscript>This report needs JavaScript. Enable it and reload the page.</noscript>
+    <div id="root"></div>
+    <script type="application/json" id="appgraph-data">__APPGRAPH_DATA__</script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

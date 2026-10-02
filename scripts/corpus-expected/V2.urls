@@ -1,0 +1,64 @@
+# V2 go-vikunja/vikunja frontend, commit a16be96aa454671fdf213b0fbe411dd38a098418
+# Hand-derived from src/router/index.ts:46-489 (routes passed to createRouter at :27).
+# Rule: every route record with a path is one URL, including redirect-only records (/user/settings :98-101, /lists :238-247, /projects/:projectId :365-382).
+# Absolute child paths stay absolute (/user/settings children :104-200, incl. /migrate/csv :191 and /migrate/:service :196); relative children join (/admin :456-488).
+# A parent and its '' child share one URL (/admin :456,464). Regex params keep their name (:projectId(\\d+) -> :projectId), so the two
+# settings/edit and settings/delete records (:271/:338, :312/:347) collapse to one URL each.
+# /:pathMatch(.*)* (:53) and /:pathMatch(.*) (:59) both match every path: one catch-all "*". /lists:pathMatch(.*)* (:238) is written /lists/*.
+/
+/*
+/about
+/admin
+/admin/invite-links
+/admin/projects
+/admin/users
+/auth/openid/:provider
+/filters/new
+/get-password-reset
+/labels
+/labels/new
+/lists/*
+/login
+/migrate/:service
+/migrate/csv
+/oauth/authorize
+/password-reset
+/projects
+/projects/:parentProjectId/new
+/projects/:projectId
+/projects/:projectId/:viewId
+/projects/:projectId/info
+/projects/:projectId/settings/archive
+/projects/:projectId/settings/background
+/projects/:projectId/settings/delete
+/projects/:projectId/settings/duplicate
+/projects/:projectId/settings/edit
+/projects/:projectId/settings/share
+/projects/:projectId/settings/views
+/projects/:projectId/settings/webhooks
+/projects/new
+/register
+/share/:share/auth
+/tasks/:id
+/tasks/by/upcoming
+/teams
+/teams/:id/edit
+/teams/new
+/time-tracking
+/user/export/download
+/user/settings
+/user/settings/api-tokens
+/user/settings/avatar
+/user/settings/bots
+/user/settings/caldav
+/user/settings/data-export
+/user/settings/deletion
+/user/settings/email-update
+/user/settings/feeds
+/user/settings/general
+/user/settings/mcp
+/user/settings/migrate
+/user/settings/password-update
+/user/settings/sessions
+/user/settings/totp
+/user/settings/webhooks

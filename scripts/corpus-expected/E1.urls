@@ -1,0 +1,65 @@
+# E1 streamyfin/streamyfin ., commit 9942b93dc1d8ee1e795e58484f82a70c879c3a31
+# Hand-derived from the app/ tree (80 files) with Expo Router rules: (group) segments stripped, index -> parent, [x] -> :x, [...x] -> *;
+# _layout, +html (app/+html.tsx) are not screens; app/+not-found.tsx -> catch-all /* at app/. page.tsx is NOT special in Expo Router (literal "page" segment;
+# the app navigates to "/settings/appearance/page", app/(auth)/(tabs)/(home)/settings.tsx:100). settings.tv.tsx merges with settings.tsx (react-native-tvos).
+# The group array (home,libraries,search,favorites,watchlists)/x yields one URL per file. Files colliding on one URL count once:
+# / ((tabs)/index, (custom-links)/index, (favorites)/index, (home)/index, (libraries)/index, (search)/index, (settings)/index, (watchlists)/index)
+# and /:libraryId ((libraries)/[libraryId].tsx = (watchlists)/[watchlistId].tsx).
+/
+/*
+/:libraryId
+/collections/:collectionId
+/companion-login
+/create
+/downloads
+/edit/:watchlistId
+/items/page
+/livetv/channels
+/livetv/guide
+/livetv/programs
+/livetv/recordings
+/login
+/music/:libraryId/albums
+/music/:libraryId/artists
+/music/:libraryId/playlists
+/music/:libraryId/suggestions
+/music/album/:albumId
+/music/artist/:artistId
+/music/playlist/:playlistId
+/now-playing
+/persons/:personId
+/player/direct-player
+/see-all
+/seerr/company/:companyId
+/seerr/genre/:genreId
+/seerr/page
+/seerr/person/:personId
+/series/:id
+/sessions
+/settings
+/settings/appearance/hide-libraries/page
+/settings/appearance/page
+/settings/audio-subtitles/page
+/settings/hide-libraries/page
+/settings/intro/page
+/settings/logs/page
+/settings/music/page
+/settings/network/page
+/settings/playback-controls/page
+/settings/plugins/kefinTweaks/page
+/settings/plugins/marlin-search/page
+/settings/plugins/page
+/settings/plugins/seerr/page
+/settings/plugins/streamystats/page
+/settings/segment-skip/page
+/topshelf/item
+/topshelf/play
+/tv-account-action-modal
+/tv-account-select-modal
+/tv-issue-modal
+/tv-option-modal
+/tv-request-modal
+/tv-season-select-modal
+/tv-series-season-modal
+/tv-subtitle-modal
+/tv-user-switch-modal

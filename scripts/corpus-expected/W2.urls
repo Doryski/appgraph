@@ -1,0 +1,46 @@
+# W2 apache/superset superset-frontend, commit bc3698b5d64b973d249d59f584a8dc3c48c83263
+# Hand-derived from the routes array in src/views/routes.tsx (every path: RoutePaths.X, resolved via src/views/routePaths.ts, plus the literal '/archived/' push),
+# including the conditional routes.push entries (feature flags, admin, auth registration), which are included unconditionally.
+# Trailing slashes are dropped (/welcome/ -> /welcome); params keep their :name (/dashboard/:idOrSlug).
+# / is included: <Redirect from="/" to="/welcome/" exact/> (src/views/App.tsx:123) is a route-declared redirect source, counted as a URL (as for R2 /auth/github).
+/
+/actionlog/list
+/alert/:alertId/log
+/alert/list
+/all_entities
+/annotationlayer/:annotationLayerId/annotation
+/annotationlayer/list
+/archived
+/chart/add
+/chart/list
+/csstemplatemodelview/list
+/dashboard/:idOrSlug
+/dashboard/list
+/databaseview/list
+/dataset/:datasetId
+/dataset/add
+/explore
+/explore/p
+/extensions/list
+/file-handler
+/list_groups
+/login
+/logout
+/redirect
+/register
+/register/activation/:activationHash
+/registrations
+/report/:alertId/log
+/report/list
+/roles
+/rowlevelsecurity/list
+/savedqueryview/list
+/sqllab
+/sqllab/history
+/tablemodelview/list
+/tags
+/tasks/list
+/theme/list
+/user_info
+/users
+/welcome

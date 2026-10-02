@@ -1,0 +1,45 @@
+node_modules/
+dist/
+coverage/
+*.log
+*.tgz
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Environment (CRITICAL - no secrets!)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*
+
+# Generated artifacts
+.appgraph-out/
+docs/appgraph/
+*.tsbuildinfo
+
+# Local scratch, agent and evidence workspaces
+.scratch/
+.evidence/
+.claude/
+docs/research/
+
+# Parity golden and pointer files live outside the repository; never commit them.
+test/golden/
+test/parity/*.local
+
+# HTML report UI build output and generated template
+report-ui/dist/
+src/emit/assets/generated.ts
+e2e/.out/
+playwright-report/
+test-results/
+
+# Throwaway temp files (probe scripts, temp configs)
+*-tmp.*
+.*-tmp.*
+*.*-tmp*.config.ts

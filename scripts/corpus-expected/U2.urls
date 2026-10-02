@@ -1,0 +1,63 @@
+# U2 OpnForm/OpnForm client, commit 413c20cb837f595035b11c41927658778d654d1e
+# Hand-derived from the client/pages tree (59 .vue files). No definePageMeta path/alias overrides, no pages:extend hook, no router.options.
+# Nuxt rules: index -> parent path, [id] -> :id, [[id]] -> :id?, [...slug] -> "*" (pages/[...all].vue -> /*).
+# A parent.vue with a child index.vue shares the index URL (pages/forms/[slug]/show.vue + show/index.vue -> /forms/:slug/show).
+# @nuxtjs/i18n locale prefixes are not included.
+/
+/*
+/admin
+/agent-drafts/edit
+/agent-drafts/preview
+/ai-form-builder
+/auth/:slug/callback
+/enterprise
+/forms/:slug
+/forms/:slug/edit
+/forms/:slug/pdf-editor/:templateId
+/forms/:slug/show
+/forms/:slug/show/integrations
+/forms/:slug/show/pdf-templates
+/forms/:slug/show/share
+/forms/:slug/show/stats
+/forms/:slug/show/submissions
+/forms/:slug/show/summary
+/forms/create
+/forms/create/guest
+/home
+/industry
+/integrations
+/integrations/:slug
+/login
+/mcp
+/mcp/authorize
+/oauth/:provider/callback
+/opnform-vs-123formbuilder
+/opnform-vs-fillout
+/opnform-vs-formbricks
+/opnform-vs-formio
+/opnform-vs-googleforms
+/opnform-vs-heyform
+/opnform-vs-jotform
+/opnform-vs-tally
+/opnform-vs-typeform
+/opnform-vs-youform
+/password/email
+/password/reset/:token
+/pricing
+/privacy-policy
+/redirect/billing-portal
+/redirect/checkout
+/register
+/report-abuse
+/self-hosted/checkout/canceled
+/self-hosted/checkout/success
+/self-hosted/license
+/setup
+/subscriptions/error
+/subscriptions/success
+/templates
+/templates/:slug
+/templates/industries/:slug
+/templates/my-templates
+/templates/types/:slug
+/terms-conditions
