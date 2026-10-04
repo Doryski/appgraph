@@ -26,7 +26,7 @@ jobs:
 
   release:
     needs: verify
-    uses: Doryski/release/.github/workflows/release.yml@b3261ac1c04ce8c564a471355ffd87820f2d94f2 # v1
+    uses: Doryski/release/.github/workflows/release.yml@04befad3a9f1c08541c7ef49c190243b182b6c5b # v1.1.1
     permissions:
       contents: write
       id-token: write
