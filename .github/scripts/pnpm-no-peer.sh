@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# pnpm does NOT auto-install peer dependencies, so `pnpm add appgraph` leaves `typescript` absent.
+# With pnpm's `auto-install-peers=false` setting, `pnpm add appgraph` leaves `typescript` absent.
 # The binary must then say what to install; a bare `Cannot find package 'typescript'` is not a fix.
 #
 #   pnpm-no-peer.sh <tarball> <workdir>
@@ -21,7 +21,7 @@ JSON
 
 echo 'export const noop = () => null' > src/index.ts
 
-pnpm add --ignore-scripts "$tarball"
+pnpm add --ignore-scripts --config.auto-install-peers=false "$tarball"
 
 if node -e "require.resolve('typescript')" 2>/dev/null; then
   echo "typescript resolved after all — this check needs a package manager that skips peers"
