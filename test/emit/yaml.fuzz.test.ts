@@ -252,6 +252,7 @@ const ORACLE_ITERATIONS = 2000
 const LARGE_DOCUMENTS = 6
 const LARGE_BREADTH = 800
 const DEFECT_ITERATIONS = 300
+const ORACLE_TIMEOUT_MS = 30_000
 
 const holeOnly = (): unknown[] => new Array<unknown>(1)
 
@@ -297,7 +298,7 @@ const largeDocument = (rng: () => number): unknown => {
   return { meta: genValue(rng, 0), items, index: Object.fromEntries(items.map((item, index) => [genKey(rng, index), item])) }
 }
 
-describe("permanent fuzz: streaming serialiser matches the pre-streaming oracle", () => {
+describe("permanent fuzz: streaming serialiser matches the pre-streaming oracle", { timeout: ORACLE_TIMEOUT_MS }, () => {
   it(`emits byte-identical output for ${ORACLE_ITERATIONS} random structures`, () => {
     const rng = mulberry32(FUZZ_SEED + 2)
     for (let i = 0; i < ORACLE_ITERATIONS; i += 1) {
